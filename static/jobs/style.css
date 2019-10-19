@@ -1,0 +1,19 @@
+.href-social-media-link {
+    padding: 5px;
+}
+
+.i-social-media-link {
+    font-size: 36px;
+}
+
+.container{
+    display: flex;
+}
+
+.right-side{
+    width: 50%;
+}
+.left-side{
+    flex-grow: 1;
+}
+

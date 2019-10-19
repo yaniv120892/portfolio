@@ -1,0 +1,81 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Yaniv Daye</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'jobs/style.css' %}">
+</head>
+<body>
+
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container tow-sides">
+            <div class="left-side">
+                <h1 class="jumbotron-heading">Hi my name is Yaniv Daye</h1>
+                <p class="lead text-muted">
+                    I am a graduated software engineer from BGU.<br>
+                    I enjoy building new systems and add features to existing products.<br>
+                    I am curious and constantly learning new technologies.<br>
+                    I also enjoy playing basketball and go out with friends for a cold beer.<br>
+                </p>
+                <div style="display: flex">
+                    <div class="right-side">
+                        <img height="200" src="{% static 'basketball-slam-dunk.png' %}">
+                    </div>
+                    <div class="left-side">
+                        <img height="200" src="{% static 'cold-beer.jpg' %}">
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <img height="300" src="{% static 'profile.jpg' %}">
+                <p style="margin-top: 10px">
+                    <a href="https://www.linkedin.com/in/yaniv-daye" class="href-social-media-link"><i class="i-social-media-link fa fa-linkedin" style="color: #2867B2"></i></a>
+                    <a href="https://www.github.com/yaniv120892" class="href-social-media-link"><i class="i-social-media-link fa fa-github" style="color: black"></i></a>
+                    <a href="https://www.facebook.com/yaniv.daye" class="href-social-media-link"><i class="i-social-media-link fa fa-facebook" style="color:#4267B2"></i></a>
+                </p>
+                <p>
+                    <a href="mailto:yaniv120892@gmail.com" class="btn btn-secondary my-2"><i class="fa fa-envelope"></i> Email Me</a>
+                    <a href="{% url 'download_cv' %}" class="btn btn-secondary my-2"><i class="fa fa-download"></i> Download CV</a>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+
+
+            <div class="row text-center">
+                {% for job in jobs.all %}
+                    <div class="col-lg-4">
+                        <div class="card" style="width:20rem;height:300px">
+                            <div style="padding: 25px">
+                                <img class="card-img-top" height="100px" width="50px" src="{{ job.image.url }}" alt="Card image cap">
+                            </div>
+                            <div class="card-block">
+                                <a href="{% url 'detail' job.id %}">
+                                    <h4 class="card-title">{{ job.title }}</h4>
+                                </a>
+                                <p class="card-text">{{ job.short_info }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</main>
+<script src="{% static 'jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+</body>
+</html>

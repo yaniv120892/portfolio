@@ -1,0 +1,38 @@
+.href-social-media-link {
+    padding: 5px;
+}
+
+.i-social-media-link {
+    font-size: 36px;
+}
+
+.left-side{
+    width: 50%;
+    text-align: left;
+}
+
+.left-side-detail{
+    width: 40%;
+    text-align: left;
+}
+.right-side{
+    margin-left: 10px;
+}
+
+.back-button{
+    margin-top: 10px;
+}
+
+.div-long-info{
+    width: 30%;
+    margin-left: 20% ;
+}
+
+.header-job-title{
+    margin-bottom: 12px;
+}
+
+.tow-sides{
+    display: flex;
+}
+
